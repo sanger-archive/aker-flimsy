@@ -52,7 +52,6 @@ def main():
     parser.add_argument('--proxy', '-p', metavar='PROXY',
                         help="proxy to use for posts (default none)")
     args = parser.parse_args()
-    print args
     req = build_data(args.file)
     print json.dumps(req, indent=4)
     send_request(json.dumps(req), args.url, args.proxy)
