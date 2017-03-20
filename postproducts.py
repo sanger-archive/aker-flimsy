@@ -36,7 +36,7 @@ def build_data(filename):
                 catalog_data[k] = v
             else:
                 product[k] = v
-    return catalog_data
+    return {'catalogue': catalog_data}
 
 def send_request(data, url, proxy):
     proxies = { 'http': proxy } if proxy else {}
