@@ -36,7 +36,7 @@ def build_data(filename):
                 catalog_data[k] = v
             else:
                 product[k] = v
-    return catalog_data
+    return {'catalogue': catalog_data}
 
 def send_request(data, url, proxy):
     proxies = { 'http': proxy } if proxy else {}
@@ -52,7 +52,6 @@ def main():
     parser.add_argument('--proxy', '-p', metavar='PROXY',
                         help="proxy to use for posts (default none)")
     args = parser.parse_args()
-    print args
     req = build_data(args.file)
     print json.dumps(req, indent=4)
     send_request(json.dumps(req), args.url, args.proxy)

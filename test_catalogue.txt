@@ -8,7 +8,7 @@ PRODUCT
 	product_version: 2
 	cost_per_sample: 5
 	availability: available
-	request_biomaterial_type: pastry
+	requested_biomaterial_type: pastry
 	TAT: 2
 
 PRODUCT
