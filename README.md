@@ -23,9 +23,11 @@ At the top are properties of the catalogue:
     url: http://localhost:3400
     lims_id: Sequencing
 
-The url indicates what url the work orders service should post work orders to for this catalogue.
+The url indicates what url the work orders service should post work orders to for this catalogue. You can find the IP address of your Mac using
 
-Then there should be zero or more product specifications. Each one begins with the word "product" on a line on its own, and then key-value pairs indicating the properties of that product.
+    ipconfig getifaddr en0
+
+Following that in the file there should be zero or more product specifications. Each one begins with the word "product" on a line on its own, and then key-value pairs indicating the properties of that product.
 
     PRODUCT
       name: Toast
@@ -51,7 +53,7 @@ Examples:
 
 Run `./receiveworkorders.py -h` to see the usage information.
 
-### In Windows
+### In Windows (untested)
 
 In Windows, you need to have a Python 2 executable in your `PATH` and use it explicitly to run the scripts.
 
