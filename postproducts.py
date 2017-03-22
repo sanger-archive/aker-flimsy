@@ -39,8 +39,11 @@ def build_data(filename):
     return {'catalogue': catalog_data}
 
 def send_request(data, url, proxy):
-    proxies = { 'http': proxy } if proxy else {}
-    r = requests.post(url=url, data=data, proxies=proxies, headers=HEADERS)
+    session = requests.Session()
+    session.trust_env = False
+    session.proxies = { 'http': proxy } if proxy else {}
+    session.headers = HEADERS
+    r = session.post(url=url, data=data)
     print r.status_code
 
 def main():

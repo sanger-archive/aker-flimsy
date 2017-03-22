@@ -1,3 +1,4 @@
+
 ##Reference implementation for a LIMS connecting to Aker
 
 ### Dependencies
@@ -7,14 +8,11 @@ These scripts run in Python 2. `postproducts.py` requires the `requests` module,
 ### `postproducts.py`
 This script reads a text file (see examples in repository), constructs a JSON request, and posts it to a specified url as a catalogue.
 
-If you have `http_proxy` set in your shell, you might have to clear it for the posts to get through.
+The current version of the script uses `trust_env=False` to avoid using an `http_proxy` environment variable in your shell.
 
-Examples:
+Example:
 
     ./postproducts.py -u http://workordersurl:4000/catalogue -f sequencing.txt
-    
-    # To clear proxy environment variable for this comment:
-    http_proxy= ./postproducts.py -u http://workordersurl:4000/catalogue -f sequencing.txt
 
 Run `./postproducts.py -h` to see the usage information.
 
