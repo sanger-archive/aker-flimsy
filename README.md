@@ -1,4 +1,4 @@
-Reference implementation for a LIMS connecting communicating with Aker to exchange product catalogues and work orders.
+Reference implementation for a LIMS communicating with Aker to exchange product catalogues and work orders.
 
 ### Dependencies
 
