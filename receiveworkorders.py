@@ -28,7 +28,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-p', '--port', default=3400, type=int, help="port to listen on")
     args = parser.parse_args()
-    server = HTTPServer(('localhost', args.port), Handler)
+    server = HTTPServer(('0.0.0.0', args.port), Handler)
     try:
         print "Listening on port %s ..."%args.port
         server.serve_forever()
