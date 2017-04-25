@@ -1,5 +1,5 @@
 pipeline: Sequencing
-url: http://172.20.243.99:3400
+url: http://localhost:3400
 lims_id: Sequencing
 
 PRODUCT
