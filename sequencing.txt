@@ -3,19 +3,118 @@ url: http://localhost:3400
 lims_id: Sequencing
 
 PRODUCT
-	name: DNA and RNA Extraction from cell pellet
-	description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-	product_version: 1
-	cost_per_sample: 11
-	availability: available
-	requested_biomaterial_type: Cells
-	TAT: 14
+    name: 30x Human Whole Genome Shotgun (WGS) with PCR
+    description: 90 Gb +/- 5% of unique** 150 PE reads with >75% of bases above Q20. 500ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
 
 PRODUCT
-	name: Human QC report
-	description: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
-	product_version: 1
-	cost_per_sample: 0
-	availability: available
-	requested_biomaterial_type: DNA
-	TAT: 7
+    name: 30x Human Whole Genome Shotgun (WGS) PCR-Free
+    description: 90 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20.  1ug required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: 15x Human Whole Genome Shotgun (WGS) with PCR
+    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 500ug required. 
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: 15x Human Whole Genome Shotgun (WGS) PCR-Free
+    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 1ng required. 
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Pathogen Whole Genome Shotgun (WGS) with PCR (Large genome >5 Mb)
+    description: 0.6 Gb +/- 5% of unique 125 PE reads with >75% of bases above Q20. 500ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Pathogen Whole Genome Shotgun (WGS) with PCR (Small genome <5 Mb)
+    description: 0.3 Gb +/- 5% of unique 125 PE reads with >75% of bases above Q20. 500ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: 100x Human Whole Exome Sequence (WES) 
+    description: 7.8 Gb +/- 5% of unique 75 PE reads with 80% on target with >75% of bases above Q20. 250ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Custom targeted sequencing, variable pulldown plex, 2 Gb per sample
+    description: 2 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Custom targeted sequencing, variable pulldown plex, 1.6 Gb per sample
+    description: 1.6 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Custom targeted sequencing, variable pulldown plex, 0.8 Gb per sample
+    description: 0.8 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: Custom targeted sequencing, variable pulldown plex, 0.4 Gb per sample
+    description: 0.4 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: available
+    requested_biomaterial_type: DNA
+    TAT: 42
+
+PRODUCT
+    name: RNASeq - 50 million reads per sample
+    description: 50 million reads/7.5 Gb +/- 5% of unique 75 PE reads with >75% of bases above Q30.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: suspended
+    requested_biomaterial_type: RNA
+    TAT: 42
+
+PRODUCT
+    name: RNASeq - 10 million reads per sample
+    description: 10 million reads/1.6 Gb +/- 5% of unique 75 PE reads with >75% of bases above Q30.
+    product_version: 20170324
+    cost_per_sample: 0
+    availability: suspended
+    requested_biomaterial_type: RNA
+    TAT: 42
