@@ -4,6 +4,11 @@ Reference implementation for a LIMS communicating with Aker to exchange product 
 
 These scripts run in Python 2. `postproducts.py` requires the `requests` module, which you can install using `pip install requests`; or simply download the requests module so that the script can use it.
 
+#### Windows users
+
+(Untested)  
+Make sure you have a Python 2 executable in your `PATH`, and use it explicitly to run the scripts.
+
 ### `postproducts.py`
 This script reads a text file (see examples in repository), constructs a JSON request, and posts it to a specified url as a catalogue.
 
@@ -44,20 +49,14 @@ Following that in the file there should be zero or more product specifications. 
 The properties are read and sent off agnostically: you can put whatever properties in here you want, and the script will happily send them, but the work orders service might not happily receive them.
 
 ### `receiveworkorders.py`
-This script listens for posts on a specified port (default 3400). It will carry on listening until it errors (or quit via `ctrl c`). While it runs, it keeps a list of all posts it has received, and outputs the complete list to `stdout` each time a new one comes in.
+This script listens for posts on a specified port (default `3400`). It will carry on listening until it errors (or quit via `ctrl c`). While it runs, it prints out any post request it receives, and writes all requests to a file (default `orders.txt`).
 
 Examples:
 
-    ./receiveworkorders.py           # default port
-    ./receiveworkorders.py -p 8000   # port 8000
+    ./receiveworkorders.py                 # default port and file
+    ./receiveworkorders.py -p 8000         # port 8000
+    ./receiveworkorders.py -o filename.txt # write to specified file
+    ./receiveworkorders.py -f              # overwrite the output file without asking for confirmation
+    ./receiveworkorders.py -a              # append to the output file rather than overwriting
 
 Run `./receiveworkorders.py -h` to see the usage information.
-
-### In Windows (untested)
-
-In Windows, you need to have a Python 2 executable in your `PATH` and use it explicitly to run the scripts.
-
-Examples:
-
-    python receiveworkorders.py
-    python postproducts.py -u http://workordersurl:4000/catalogue -f sequencing.txt
