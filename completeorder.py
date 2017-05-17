@@ -51,10 +51,12 @@ def make_complete(order):
     order = order['work_order']
     materials = order['materials']
     updated_materials = []
+    parent_ids = []
     if materials:
         m = materials[0]
         g = 'male' if m.get('gender')=='female' else 'female'
         updated_materials.append({'material_id': m['material_id'], 'gender': g})
+        parent_ids = [m['material_id'] for m in materials]
     barcode = new_barcode()
     new_materials = [
         {
@@ -62,6 +64,7 @@ def make_complete(order):
                 'barcode': barcode,
                 'address': 'A:1',
             },
+            'parents': parent_ids,
             'gender': 'male',
             'donor_id': 'my_donor_id',
             'phenotype': 'my_phenotype',
@@ -72,6 +75,7 @@ def make_complete(order):
                 'barcode': barcode,
                 'address': 'A:2',
             },
+            'parents': parent_ids,
             'gender': 'female',
             'donor_id': 'another_donor_id',
             'phenotype': 'another_phenotype',
