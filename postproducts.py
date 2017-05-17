@@ -38,11 +38,11 @@ def build_data(filename):
                 product[k] = v
     return {'catalogue': catalog_data}
 
-def send_request(data, url, proxy):
+def send_request(data, url, proxy, headers=None):
     session = requests.Session()
     session.trust_env = False
     session.proxies = { 'http': proxy } if proxy else {}
-    session.headers = HEADERS
+    session.headers = HEADERS if headers is None else headers
     r = session.post(url=url, data=data)
     print r.status_code
 

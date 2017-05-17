@@ -16,7 +16,7 @@ class Handler(BaseHTTPRequestHandler):
             order_id = data['work_order']['work_order_id']
         except KeyError:
             print "[This does not match my expectations of a work order.]"
-            order_id = '?'
+            order_id = ''
         data = json.dumps(data, indent=4)
         print "\n"
         print data
