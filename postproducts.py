@@ -10,13 +10,6 @@ import json
 
 HEADERS = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 
-class Product(object):
-    def __init__(self):
-        self.name = None
-        self.version = None
-        self.desc = None
-        self.unit_cost = None
-
 def build_data(filename):
     product = None
     catalog_data = {'products':[]}
