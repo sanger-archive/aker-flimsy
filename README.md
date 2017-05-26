@@ -60,3 +60,13 @@ Examples:
     ./receiveworkorders.py -a              # append to the output file rather than overwriting
 
 Run `./receiveworkorders.py -h` to see the usage information.
+
+### `completeorder.py`
+This script uses the generated file for work orders (created by receiveworkorders.py) to create a message that will complete a work order, with the following call:
+
+completeorder.py [-h] [-f FILE] [-u URL] [-p PROXY] ID
+
+Example for completing the work order 17:
+
+completeorder.py -f orders.txt -u http://my_url_for_work_order_service/work_orders/17/complete 17
+
