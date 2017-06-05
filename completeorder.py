@@ -109,6 +109,7 @@ def send_request(data, url, proxy, headers=None):
     session.headers = HEADERS if headers is None else headers
     r = session.post(url=url, data=data)
     print r.status_code
+    print r.text
 
 def complete_order(order_id, filename, url, proxy):
     """Reads the order from a file; constructs a "complete order" message,
