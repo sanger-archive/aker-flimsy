@@ -1,6 +1,13 @@
 #!/usr/bin/env python -tt
 
-"""Read a received work order from a local file, and post a "complete work order" message for it.
+"""Read a received work order from a local file,
+and post a "complete work order" message for it.
+
+If you supply the -s argument, e.g.
+  -s http://my_server:3500
+then the url used would be
+  http://my_server:3500/work_orders/[N]/complete
+where [N] is the work order id.
 """
 
 import argparse
@@ -111,6 +118,11 @@ def send_request(data, url, proxy, headers=None):
     print r.status_code
     print r.text
 
+def make_url(site, order_id):
+    if not site.endswith('/'):
+        site += '/'
+    return '{}work_orders/{}/complete'.format(site, order_id)
+
 def complete_order(order_id, filename, url, proxy):
     """Reads the order from a file; constructs a "complete order" message,
     and sends that to the given url (if a url is given).
@@ -125,20 +137,28 @@ def complete_order(order_id, filename, url, proxy):
     if url:
         send_request(data, url, proxy)
     else:
-        print "\nUse the --url argument to specify destination"
+        print "\nUse the --url or --site argument to specify destination"
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('order_id', metavar='ID', type=int,
                         help='work order ID to respond to')
     parser.add_argument('-f', '--file', default='orders.txt',
                         help="file to read orders from")
-    parser.add_argument('-u', '--url',
-                        help="url to post message to")
     parser.add_argument('-p', '--proxy',
                         help="proxy to use for posts (default none)")
+    url_group = parser.add_mutually_exclusive_group(required=False)
+    url_group.add_argument('-u', '--url',
+                           help="exact url to post message to")
+    url_group.add_argument('-s', '--site', help="site to post message to")
+
     args = parser.parse_args()
-    complete_order(args.order_id, args.file, args.url, args.proxy)
+    if args.site:
+        url = make_url(args.site, args.order_id)
+    else:
+        url = args.url
+    complete_order(args.order_id, args.file, url, args.proxy)
     
 if __name__ == '__main__':
     main()
