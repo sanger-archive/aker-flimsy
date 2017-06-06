@@ -4,6 +4,7 @@ lims_id: Cellular
 
 PRODUCT
 	name: Neural stem cell line
+	product_uuid: a91c470f-58da-4f4b-87b8-64f7fd0cd8f6
 	description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 	product_version: 1
 	cost_per_sample: 600
@@ -13,6 +14,7 @@ PRODUCT
 
 PRODUCT
 	name: Induced Pluripotent Stem (IPS) Cell Line
+	product_uuid: e5e9e5f1-bbb0-4627-9fa1-a753d74c080f
 	description: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	cost_per_sample: 2500
 	availability: available
