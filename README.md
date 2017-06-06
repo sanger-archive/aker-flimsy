@@ -72,6 +72,7 @@ Examples:
 
     ./completeorder.py -u http://work_orders_site:4000/work_orders/17/complete 17
     ./completeorder.py -s http://work_orders_site:4000 17
+    ./completeorder.py -s http://work_orders_site:4000 17 --cancel
 
 The `-s` argument can be used as a shortcut so you don't have to specify the `/work_orders/[N]/complete` part of the url in your command.
 

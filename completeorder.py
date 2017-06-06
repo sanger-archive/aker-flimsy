@@ -118,10 +118,12 @@ def send_request(data, url, proxy, headers=None):
     print r.status_code
     print r.text
 
-def make_url(site, order_id):
+def make_url(site, order_id, cancel):
     if not site.endswith('/'):
         site += '/'
-    return '{}work_orders/{}/complete'.format(site, order_id)
+    return '{}work_orders/{}/{}'.format(
+        site, order_id, 'cancel' if cancel else 'complete'
+    )
 
 def complete_order(order_id, filename, url, proxy):
     """Reads the order from a file; constructs a "complete order" message,
@@ -153,9 +155,12 @@ def main():
                            help="exact url to post message to")
     url_group.add_argument('-s', '--site', help="site to post message to")
 
+    parser.add_argument('--cancel', action='store_true',
+                        help="send a cancel instead of a complete")
+    
     args = parser.parse_args()
     if args.site:
-        url = make_url(args.site, args.order_id)
+        url = make_url(args.site, args.order_id, args.cancel)
     else:
         url = args.url
     complete_order(args.order_id, args.file, url, args.proxy)
