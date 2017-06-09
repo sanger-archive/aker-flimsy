@@ -10,6 +10,7 @@ PRODUCT
 	availability: available
 	requested_biomaterial_type: pastry
 	TAT: 2
+	product_class: DNA Sequencing
 
 PRODUCT
 	name: sandwich
@@ -19,3 +20,4 @@ PRODUCT
 	availability: suspended
 	requested_biomaterial_type: bread
 	TAT: 1
+	product_class: Genotyping

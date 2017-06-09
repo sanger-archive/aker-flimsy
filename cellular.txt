@@ -10,6 +10,8 @@ PRODUCT
 	availability: available
 	requested_biomaterial_type: Cells
 	TAT: 90
+	product_class: Genotyping
+
 
 PRODUCT
 	name: Induced Pluripotent Stem (IPS) Cell Line
@@ -18,3 +20,5 @@ PRODUCT
 	availability: available
 	requested_biomaterial_type: Tissue
 	TAT: 180
+	product_class: DNA Sequencing
+
