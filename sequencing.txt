@@ -7,7 +7,6 @@ PRODUCT
     product_uuid: 74146ef8-f618-4bb7-b1bc-03c58d3bc906
     description: 90 Gb +/- 5% of unique** 150 PE reads with >75% of bases above Q20. 500ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -17,7 +16,6 @@ PRODUCT
     product_uuid: b5e9451a-97d3-4b05-8d5d-44205f4f5cab
     description: 90 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20.  1ug required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -25,9 +23,8 @@ PRODUCT
 PRODUCT
     name: 15x Human Whole Genome Shotgun (WGS) with PCR
     product_uuid: d37b9ec1-f1d0-4e52-9d79-0facd13989e2
-    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 500ug required. 
+    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 500ug required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -35,9 +32,8 @@ PRODUCT
 PRODUCT
     name: 15x Human Whole Genome Shotgun (WGS) PCR-Free
     product_uuid: cf217a6e-0685-4bea-99a6-a27fea8e4ba5
-    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 1ng required. 
+    description: 45 Gb +/- 5% of unique 150 PE reads with >75% of bases above Q20. 1ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -47,7 +43,6 @@ PRODUCT
     product_uuid: 2be83777-fe4d-462e-9e1b-dd8f987ef6cf
     description: 0.6 Gb +/- 5% of unique 125 PE reads with >75% of bases above Q20. 500ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -57,17 +52,15 @@ PRODUCT
     product_uuid: c062327a-0661-496a-adb1-f4ca771600dc
     description: 0.3 Gb +/- 5% of unique 125 PE reads with >75% of bases above Q20. 500ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
 
 PRODUCT
-    name: 100x Human Whole Exome Sequence (WES) 
+    name: 100x Human Whole Exome Sequence (WES)
     product_uuid: 25b6b2cd-53fd-4aa0-b309-c71567072538
     description: 7.8 Gb +/- 5% of unique 75 PE reads with 80% on target with >75% of bases above Q20. 250ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -77,7 +70,6 @@ PRODUCT
     product_uuid: 691e0829-34db-4a81-82b1-8f7bbb677479
     description: 2 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -87,7 +79,6 @@ PRODUCT
     product_uuid: a136a227-5271-40af-91e5-bbb0ad4e47b9
     description: 1.6 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -97,7 +88,6 @@ PRODUCT
     product_uuid: 1f15597c-7f58-4f46-8f34-46787cf4df7a
     description: 0.8 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -107,7 +97,6 @@ PRODUCT
     product_uuid: b85d9c59-7b1f-437c-a8b7-f0d0341b4e92
     description: 0.4 Gb +/- 5% of unique 75 PE reads with 50% on target with >75% of bases above Q20. 100ng required.
     product_version: 20170324
-    cost_per_sample: 0
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
@@ -117,7 +106,6 @@ PRODUCT
     product_uuid: c81e0011-d1ea-4043-83a9-a112829fd4f5
     description: 50 million reads/7.5 Gb +/- 5% of unique 75 PE reads with >75% of bases above Q30.
     product_version: 20170324
-    cost_per_sample: 0
     availability: suspended
     requested_biomaterial_type: RNA
     TAT: 42
@@ -127,7 +115,6 @@ PRODUCT
     product_uuid: eb8854f4-5e9a-43d8-9be3-4bcf72629de5
     description: 10 million reads/1.6 Gb +/- 5% of unique 75 PE reads with >75% of bases above Q30.
     product_version: 20170324
-    cost_per_sample: 0
     availability: suspended
     requested_biomaterial_type: RNA
     TAT: 42
