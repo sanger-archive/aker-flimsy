@@ -20,7 +20,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Cell Line creation
+    product_class: Cell Line Creation
 
 PRODUCT
     name: 15x Human Whole Genome Shotgun (WGS) with PCR
@@ -80,7 +80,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Cell Line creation
+    product_class: Cell Line Creation
 
 PRODUCT
     name: Custom targeted sequencing, variable pulldown plex, 1.6 Gb per sample
