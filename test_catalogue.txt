@@ -7,17 +7,17 @@ PRODUCT
 	product_uuid: 5232cf4b-4978-4b3e-be4a-b376b69abccc
 	description: Delicious pie
 	product_version: 2
-	cost_per_sample: 5
 	availability: available
 	requested_biomaterial_type: pastry
 	TAT: 2
+	product_class: DNA Sequencing
 
 PRODUCT
 	name: sandwich
 	product_uuid: d6622c96-7362-45fe-a4dd-27e8993f3311
 	description: Ham
 	product_version: 1
-	cost_per_sample: 2
 	availability: suspended
 	requested_biomaterial_type: bread
 	TAT: 1
+	product_class: Genotyping
