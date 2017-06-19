@@ -40,6 +40,8 @@ The url indicates what url the work orders service should post work orders to fo
 
     ipconfig getifaddr en0
 
+(You can use the `--lims` argument to specify this url instead of editing the file.)
+
 Following that in the file there should be zero or more product specifications. Each one begins with the word "product" on a line on its own, and then key-value pairs indicating the properties of that product.
 
     PRODUCT
