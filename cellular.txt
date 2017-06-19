@@ -1,5 +1,5 @@
 pipeline: Cellular
-url: http://<LIMS IP>:3400
+url: http://localhost:3400
 lims_id: Cellular
 
 PRODUCT
