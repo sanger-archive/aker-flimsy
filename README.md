@@ -16,9 +16,17 @@ The current version of the script uses `trust_env=False` to avoid using an `http
 
 Example:
 
-    ./postproducts.py -u http://workordersurl:4000/catalogue -f sequencing.txt
+    ./postproducts.py -u http://localhost:4000/catalogue -f sequencing.txt
 
-Run `./postproducts.py -h` to see the usage information.
+You can use the `--lims` or `-l` argument to specify a URL for the LIMS to receive work orders at. Otherwise, the url specified in the products file will be used.
+
+Examples:
+
+	--lims http://localhost:3400
+	-l http://localhost:3400
+	-l http://[some IP address]:3400
+
+Run `./postproducts.py -h` to see the full usage information.
 
 #### Catalogue file format
 The catalogue file mostly consists of key:value pairs.

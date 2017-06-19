@@ -10,7 +10,7 @@ import json
 
 HEADERS = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 
-def build_data(filename):
+def build_data(filename, lims_url=None):
     product = None
     catalog_data = {'products':[]}
     with open(filename, 'r') as fin:
@@ -26,6 +26,8 @@ def build_data(filename):
             k = k.strip()
             v = v.strip()
             if product is None:
+                if k.lower()=='url' and lims_url:
+                    v = lims_url
                 catalog_data[k] = v
             else:
                 product[k] = v
@@ -47,8 +49,10 @@ def main():
                         help="file to read catalogue information from")
     parser.add_argument('--proxy', '-p', metavar='PROXY',
                         help="proxy to use for posts (default none)")
+    parser.add_argument('--lims', '-l', metavar='LIMS_URL',
+                        help="url for Aker to post its work orders to")
     args = parser.parse_args()
-    req = build_data(args.file)
+    req = build_data(args.file, args.lims)
     print json.dumps(req, indent=4)
     send_request(json.dumps(req), args.url, args.proxy)
     
