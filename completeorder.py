@@ -62,8 +62,8 @@ def make_complete(order):
     if materials:
         m = materials[0]
         g = 'male' if m.get('gender')=='female' else 'female'
-        updated_materials.append({'material_id': m['material_id'], 'gender': g})
-        parent_ids = [m['material_id'] for m in materials]
+        updated_materials.append({'_id': m['_id'], 'gender': g})
+        parent_ids = [m['_id'] for m in materials]
     barcode = new_barcode()
     new_materials = [
         {
