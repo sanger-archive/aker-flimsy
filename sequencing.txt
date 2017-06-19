@@ -1,5 +1,5 @@
 pipeline: Sequencing
-url: http://localhost:3400
+url: http://<lims IP>:3400
 lims_id: Sequencing
 
 PRODUCT
@@ -20,7 +20,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Cell Line Creation
+    product_class: DNA Sequencing
 
 PRODUCT
     name: 15x Human Whole Genome Shotgun (WGS) with PCR
@@ -30,7 +30,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Transcriptomics
+    product_class: DNA Sequencing
 
 PRODUCT
     name: 15x Human Whole Genome Shotgun (WGS) PCR-Free
@@ -50,7 +50,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Transcriptomics
+    product_class: DNA Sequencing
 
 PRODUCT
     name: Pathogen Whole Genome Shotgun (WGS) with PCR (Small genome <5 Mb)
@@ -70,7 +70,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Genotyping
+    product_class: DNA Sequencing
 
 PRODUCT
     name: Custom targeted sequencing, variable pulldown plex, 2 Gb per sample
@@ -80,7 +80,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Cell Line Creation
+    product_class: DNA Sequencing
 
 PRODUCT
     name: Custom targeted sequencing, variable pulldown plex, 1.6 Gb per sample
@@ -90,7 +90,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Transcriptomics
+    product_class: DNA Sequencing
 
 PRODUCT
     name: Custom targeted sequencing, variable pulldown plex, 0.8 Gb per sample
@@ -100,7 +100,7 @@ PRODUCT
     availability: available
     requested_biomaterial_type: DNA
     TAT: 42
-    product_class: Genotyping
+    product_class: DNA Sequencing
 
 PRODUCT
     name: Custom targeted sequencing, variable pulldown plex, 0.4 Gb per sample
@@ -130,4 +130,4 @@ PRODUCT
     availability: suspended
     requested_biomaterial_type: RNA
     TAT: 42
-    product_class: Genotyping
+    product_class: Transcriptomics
