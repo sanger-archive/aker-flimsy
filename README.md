@@ -12,11 +12,13 @@ Make sure you have a Python 2 executable in your `PATH`, and use it explicitly t
 ### `postproducts.py`
 This script reads a text file (see examples in repository), constructs a JSON request, and posts it to a specified url as a catalogue.
 
-The current version of the script uses `trust_env=False` to avoid using an `http_proxy` environment variable in your shell.
+The current version of the script uses `trust_env=False` to avoid using an `http_proxy` environment variable in your shell. You can specify a proxy using the `--proxy` argument.
+
+This folder will later include a `cert.crt` file, which will be used to verify the https connection to the work orders service. If this file is missing, the https certification will not be verified.
 
 Example:
 
-    ./postproducts.py -u http://localhost:4000/catalogue -f sequencing.txt
+    ./postproducts.py -u http://localhost:4000/catalogues -f sequencing.txt
 
 You can use the `--lims` or `-l` argument to specify a URL for the LIMS to receive work orders at. Otherwise, the url specified in the products file will be used.
 
