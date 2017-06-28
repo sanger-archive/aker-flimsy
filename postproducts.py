@@ -54,13 +54,13 @@ def main():
                         help="proxy to use for posts (default none)")
     parser.add_argument('--lims', '-l', metavar='LIMS_URL',
                         help="url for Aker to post its work orders to")
+    args = parser.parse_args()
+    req = build_data(args.file, args.lims)
+    print json.dumps(req, indent=4)
     cert = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'cert.crt')
     if not os.path.isfile(cert):
         print "[No cert.crt file in folder -- proceeding without verification]"
         cert = False
-    args = parser.parse_args()
-    req = build_data(args.file, args.lims)
-    print json.dumps(req, indent=4)
     send_request(json.dumps(req), args.url, args.proxy, cert)
     
 if __name__ == '__main__':

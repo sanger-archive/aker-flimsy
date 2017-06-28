@@ -10,6 +10,7 @@ then the url used would be
 where [N] is the work order id.
 """
 
+import os
 import argparse
 import re
 import json
@@ -110,12 +111,14 @@ def make_complete(order):
     return { 'work_order': result }
 
 
-def send_request(data, url, proxy, headers=None):
+def send_request(data, url, proxy, cert=None, headers=None):
     """Posts some JSON to the given url."""
     session = requests.Session()
     session.trust_env = False
     session.proxies = { 'http': proxy } if proxy else {}
     session.headers = HEADERS if headers is None else headers
+    if cert is not None:
+        session.verify = cert
     r = session.post(url=url, data=data)
     print r.status_code
     print r.text
@@ -127,7 +130,7 @@ def make_url(site, order_id, cancel):
         site, order_id, 'cancel' if cancel else 'complete'
     )
 
-def complete_order(order_id, filename, url, proxy):
+def complete_order(order_id, filename, url, proxy, cert=None):
     """Reads the order from a file; constructs a "complete order" message,
     and sends that to the given url (if a url is given).
     """
@@ -139,7 +142,7 @@ def complete_order(order_id, filename, url, proxy):
     data = json.dumps(message, indent=4)
     print data
     if url:
-        send_request(data, url, proxy)
+        send_request(data, url, proxy, cert)
     else:
         print "\nUse the --url or --site argument to specify destination"
 
@@ -161,11 +164,16 @@ def main():
                         help="send a cancel instead of a complete")
     
     args = parser.parse_args()
+
     if args.site:
         url = make_url(args.site, args.order_id, args.cancel)
     else:
         url = args.url
-    complete_order(args.order_id, args.file, url, args.proxy)
+    cert = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'cert.crt')
+    if not os.path.isfile(cert):
+        print "[No cert.crt file in folder -- proceeding without verification]"
+        cert = False
+    complete_order(args.order_id, args.file, url, args.proxy, cert)
     
 if __name__ == '__main__':
     main()
