@@ -3,151 +3,151 @@ url: http://localhost:3400
 lims_id: Cellular
 
 PRODUCT
-    name: Cancer cell line banking
-    product_uuid: a91c470f-58da-4f4b-87b8-64f7fd0cd8f6
+	name: Cancer cell line banking
+	product_uuid: a91c470f-58da-4f4b-87b8-64f7fd0cd8f6
 	description: CRISPR Cancer cell line banking Units: a line.
 	product_version: 1
 	availability: available
 	requested_biomaterial_type: Cells
 	TAT: 90
-    product_class: Cell Line Creation
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: CRISPR Guide RNA transduction
-    product_uuid: 8d03882e-2370-4eb0-8f92-0f128f82bdb8
-    description: CRISPR CRISPR Guide RNA transduction. Units: a line.
-    product_version: 2
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 66
-    product_class: Cell Line Creation
+	name: CRISPR Guide RNA transduction
+	product_uuid: 8d03882e-2370-4eb0-8f92-0f128f82bdb8
+	description: CRISPR CRISPR Guide RNA transduction. Units: a line.
+	product_version: 2
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 66
+	product_class: Cell Line Creation
 
 PRODUCT 
-    name: CRISPR CAS9 transduction
-    product_uuid: ce66cace-aea6-4d2e-9fa5-1b6392a2d19b
-    description: CRISPR CAS9 transduction. Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: CRISPR CAS9 transduction
+	product_uuid: ce66cace-aea6-4d2e-9fa5-1b6392a2d19b
+	description: CRISPR CAS9 transduction. Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: iPS derivation from skin ( Cytotune 2)
-    product_uuid: 71983e98-42f0-4c3d-9d7f-3eb2eadf33c1
-    description: HipSci iPS derivation from skin ( Cytotune 2). Units: donor reprogrammed, 2 lines banked.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: iPS derivation from skin ( Cytotune 2)
+	product_uuid: 71983e98-42f0-4c3d-9d7f-3eb2eadf33c1
+	description: HipSci iPS derivation from skin ( Cytotune 2). Units: donor reprogrammed, 2 lines banked.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: Preparation for ChIP/Genomic Assays for hIPS  (Feeder Free)
-    product_uuid: fc4fe55d-e8ba-4e2a-8948-e26e205ac866
-    description: HipSci Preparation for ChIP/Genomic Assays for hIPS  (Feeder Free). Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
-
-    PRODUCT
-    name: Sendai Clearance Testing
-    product_uuid: d4010cb9-089a-4911-a812-6ace522d32a5
-    description: Sendai Clearance Testing. Units: a test.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: Preparation for ChIP/Genomic Assays for hIPS  (Feeder Free)
+	product_uuid: fc4fe55d-e8ba-4e2a-8948-e26e205ac866
+	description: HipSci Preparation for ChIP/Genomic Assays for hIPS  (Feeder Free). Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: iPS derivation from PBMC  - Cytotune 2
-    product_uuid: 49389011-4711-4309-b397-f443d0688b19
-    description: Insignia iPS derivation from PBMC  - Cytotune 2. Units: donor reprogrammed, 3 lines banked.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: Sendai Clearance Testing
+	product_uuid: d4010cb9-089a-4911-a812-6ace522d32a5
+	description: Sendai Clearance Testing. Units: a test.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: PBMC isolation from blood
-    product_uuid: e200d61e-c297-4219-a8b1-3c835ce528e1
-    description: Insignia PBMC isolation from blood. Units: per patient sample ( 20ml).
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: iPS derivation from PBMC  - Cytotune 2
+	product_uuid: 49389011-4711-4309-b397-f443d0688b19
+	description: Insignia iPS derivation from PBMC  - Cytotune 2. Units: donor reprogrammed, 3 lines banked.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: iPS Mutagen  - Banking
-    product_uuid: ca208ce8-320b-4d4e-998c-8ee09e202aed
-    description: Insignia iPS Mutagen  - Banking. Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: PBMC isolation from blood
+	product_uuid: e200d61e-c297-4219-a8b1-3c835ce528e1
+	description: Insignia PBMC isolation from blood. Units: per patient sample ( 20ml).
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: Initial Derivation
-    product_uuid: ca208ce8-320b-4d4e-998c-8ee09e202aed
-    description: Organoids Initial Derivation. Units: per patient sample.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: iPS Mutagen  - Banking
+	product_uuid: ca208ce8-320b-4d4e-998c-8ee09e202aed
+	description: Insignia iPS Mutagen  - Banking. Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: Organoid passage and banking
-    product_uuid: 7ac0ed75-a48e-43d2-96ee-d35b617cf5e9
-    description: Organoid passage and banking. Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: Initial Derivation
+	product_uuid: ca208ce8-320b-4d4e-998c-8ee09e202aed
+	description: Organoids Initial Derivation. Units: per patient sample.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: Organoid QC thaw
-    product_uuid: 3e81d56e-e896-4d3b-9846-2fbd1bd6dd08
-    description: Organoid QC thaw. Units: per vial.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: Organoid passage and banking
+	product_uuid: 7ac0ed75-a48e-43d2-96ee-d35b617cf5e9
+	description: Organoid passage and banking. Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: iPS banking (small bank for internal use only)
-    product_uuid: 5ae0f3d8-d33b-4bd8-99f6-61bfc6cb10b5
-    description: MacroMap iPS banking (small bank for internal use only). Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: Organoid QC thaw
+	product_uuid: 3e81d56e-e896-4d3b-9846-2fbd1bd6dd08
+	description: Organoid QC thaw. Units: per vial.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: EB formation and plating
-    product_uuid: 75b25f86-b389-432f-bc19-662e00e5a2d8
-    description: MacroMap EB formation and plating. Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: iPS banking (small bank for internal use only)
+	product_uuid: 5ae0f3d8-d33b-4bd8-99f6-61bfc6cb10b5
+	description: MacroMap iPS banking (small bank for internal use only). Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
 
 PRODUCT
-    name: Precursor harvest and stimulation
-    product_uuid: ec50542b-d340-426b-8338-231b12ca8c93
-    description: MacroMap EB Precursor harvest and stimulation. Units: a line.
-    product_version: 1
-    availability: available
-    requested_biomaterial_type: Cells
-    TAT: 90
-    product_class: Cell Line Creation
+	name: EB formation and plating
+	product_uuid: 75b25f86-b389-432f-bc19-662e00e5a2d8
+	description: MacroMap EB formation and plating. Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
+
+PRODUCT
+	name: Precursor harvest and stimulation
+	product_uuid: ec50542b-d340-426b-8338-231b12ca8c93
+	description: MacroMap EB Precursor harvest and stimulation. Units: a line.
+	product_version: 1
+	availability: available
+	requested_biomaterial_type: Cells
+	TAT: 90
+	product_class: Cell Line Creation
