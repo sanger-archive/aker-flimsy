@@ -77,6 +77,7 @@ def make_complete(order):
             'donor_id': 'my_donor_id',
             'phenotype': 'my_phenotype',
             'common_name': 'Mouse',
+            'available': True
         },
         {
             'container': {
@@ -89,6 +90,7 @@ def make_complete(order):
             'donor_id': 'another_donor_id',
             'phenotype': 'another_phenotype',
             'common_name': 'Mouse',
+            'available': True
         },
     ]
     containers = [
