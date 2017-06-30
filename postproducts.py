@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python
 
 """Send product catalogue (read from a file) to a specified Aker url.
 If messages don't get through, try unsetting the proxy in your shell.

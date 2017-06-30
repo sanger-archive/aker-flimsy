@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python
 
 """Read a received work order from a local file,
 and post a "complete work order" message for it.
