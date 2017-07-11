@@ -18,7 +18,7 @@ This folder will later include a `cert.crt` file, which will be used to verify t
 
 Example:
 
-    ./postproducts.py -u http://localhost:4000/catalogues -f sequencing.txt
+    ./postproducts.py -u http://localhost:4000/api/v1/catalogue -f sequencing.txt
 
 You can use the `--lims` or `-l` argument to specify a URL for the LIMS to receive work orders at. Otherwise, the url specified in the products file will be used.
 
