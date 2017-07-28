@@ -77,7 +77,7 @@ def make_complete(order):
             'gender': 'male',
             'donor_id': 'my_donor_id',
             'phenotype': 'my_phenotype',
-            'common_name': 'Mouse',
+            'scientific_name': 'Mouse',
             'available': True
         },
         {
@@ -90,7 +90,7 @@ def make_complete(order):
             'gender': 'female',
             'donor_id': 'another_donor_id',
             'phenotype': 'another_phenotype',
-            'common_name': 'Mouse',
+            'scientific_name': 'Mouse',
             'available': True
         },
     ]
