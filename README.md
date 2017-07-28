@@ -9,10 +9,13 @@ These scripts run in Python 2. `postproducts.py` requires the `requests` module,
 (Untested)  
 Make sure you have a Python 2 executable in your `PATH`, and use it explicitly to run the scripts.
 
+#### Scripts
+
 ### `postproducts.py`
 This script reads a text file (see examples in repository), constructs a JSON request, and posts it to a specified url as a catalogue.
 
-The current version of the script uses `trust_env=False` to avoid using an `http_proxy` environment variable in your shell. You can specify a proxy using the `--proxy` argument.
+The current version of the script uses `trust_env=False` to avoid using an
+`http_proxy` environment variable in your shell. You can specify a proxy using the `--proxy` argument.
 
 This folder will later include a `cert.crt` file, which will be used to verify the https connection to the work orders service. If this file is missing, the https certification will not be verified.
 
@@ -82,7 +85,7 @@ Usage:
     
 Examples:
 
-    ./completeorder.py -u http://work_orders_site:4000/work_orders/17/complete 17
+    ./completeorder.py -u http://work_orders_site:4000/api/v1/work_orders/17/complete 17
     ./completeorder.py -s http://work_orders_site:4000 17
     ./completeorder.py -s http://work_orders_site:4000 17 --cancel
 
