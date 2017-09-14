@@ -53,7 +53,7 @@ def read_work_order(order_id, file):
         return ''.join(lines)
     return None
 
-def make_complete(order):
+def make_complete(order, cancel=False):
     """Starting from the given order (dict), creates a "complete order" message
     (another dict), containing updated material, new materials, and a new container."""
     order = order['work_order']
@@ -101,9 +101,10 @@ def make_complete(order):
           'num_of_rows': 4, 'num_of_cols': 6,
         }
     ]
+    comment = 'We %s your order for you.'%('cancelled' if cancel else 'completed')
     result = {
         'work_order_id': order['work_order_id'],
-        'comment': "Now with chocolate.",
+        'comment': comment,
         'updated_materials': updated_materials,
         'new_materials': new_materials,
         'containers': containers,
@@ -130,7 +131,7 @@ def make_url(site, order_id, cancel):
         site, order_id, 'cancel' if cancel else 'complete'
     )
 
-def complete_order(order_id, filename, url, proxy, cert=None):
+def complete_order(order_id, filename, url, proxy, cert, cancel):
     """Reads the order from a file; constructs a "complete order" message,
     and sends that to the given url (if a url is given).
     """
@@ -138,7 +139,7 @@ def complete_order(order_id, filename, url, proxy, cert=None):
     if order_json is None:
         raise LookupError("No order found with id %r"%order_id)
     order = json.loads(order_json)
-    message = make_complete(order)
+    message = make_complete(order, cancel)
     data = json.dumps(message, indent=4)
     print data
     if url:
@@ -173,7 +174,7 @@ def main():
     if not os.path.isfile(cert):
         print "[No cert.crt file in folder -- proceeding without verification]"
         cert = False
-    complete_order(args.order_id, args.file, url, args.proxy, cert)
+    complete_order(args.order_id, args.file, url, args.proxy, cert, args.cancel)
     
 if __name__ == '__main__':
     main()
