@@ -32,7 +32,7 @@ def new_barcode(num_digits=5, chars=string.digits+string.uppercase):
 def read_work_order(order_id, file):
     """Reads the work order from an orders file.
     The file must have lines like "===ORDER 6===" to announce its orders.
-    If multiple orders matching are found, the latest is returned.
+    If multiple matching orders are found, the latest is returned.
     Returns None if no matching order is found."""
     ptn = re.compile(r'^===ORDER ?([0-9]*)===')
     lines = None
@@ -125,6 +125,7 @@ def send_request(data, url, proxy, cert=None, headers=None):
     print r.text
 
 def make_url(site, order_id, cancel):
+    """Makes the complete/cancel url from the given elements."""
     if not site.endswith('/'):
         site += '/'
     return '{}api/v1/work_orders/{}/{}'.format(
@@ -132,7 +133,7 @@ def make_url(site, order_id, cancel):
     )
 
 def complete_order(order_id, filename, url, proxy, cert, cancel):
-    """Reads the order from a file; constructs a "complete order" message,
+    """Reads the order from a file; constructs a "complete order" message;
     and sends that to the given url (if a url is given).
     """
     order_json = read_work_order(order_id, filename)

@@ -12,8 +12,11 @@ import json
 HEADERS = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 
 def build_data(filename, lims_url=None):
+    """Read the given filename and builds a catalogue message (a dict)
+    out of it, that can be sent as JSON to the work orders appliaction.
+    """
     product = None
-    catalog_data = {'products':[]}
+    catalog_data = {'products': []}
     with open(filename, 'r') as fin:
         for line in fin:
             line = line.strip()
@@ -23,9 +26,7 @@ def build_data(filename, lims_url=None):
                 product = {}
                 catalog_data['products'].append(product)
                 continue
-            k,v = line.split(':', 1)
-            k = k.strip()
-            v = v.strip()
+            k,v = map(str.strip, line.split(':', 1))
             if product is None:
                 if k.lower()=='url' and lims_url:
                     v = lims_url
@@ -35,6 +36,7 @@ def build_data(filename, lims_url=None):
     return {'catalogue': catalog_data}
 
 def send_request(data, url, proxy, cert=None, headers=None):
+    """Send the given data to the given url."""
     session = requests.Session()
     session.trust_env = False
     session.proxies = { 'http': proxy, 'https': proxy } if proxy else {}

@@ -9,6 +9,9 @@ import json
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 class Handler(BaseHTTPRequestHandler):
+    """Handler for incoming requests.
+    The class variable output_file lets you record the
+    received orders to a local file."""
     output_file = None
     def do_POST(self):
         data = self.post_data()
@@ -34,6 +37,8 @@ class Handler(BaseHTTPRequestHandler):
             fout.write('\n\n')
 
 def confirm(prompt):
+    """Ask the user a question until they answer yes or no.
+    Returns true or false respectively."""
     print prompt
     while True:
         answer = raw_input('> ').strip().lower()
@@ -45,15 +50,20 @@ def confirm(prompt):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('-p', '--port', default=3400, type=int, help="port to listen on (default is 3400)")
-    parser.add_argument('-o', '--output', metavar='PATH', default='orders.txt', help="file to write to (default is orders.txt)")
+    parser.add_argument('-p', '--port', default=3400, type=int,
+                            help="port to listen on (default is 3400)")
+    parser.add_argument('-o', '--output', metavar='PATH', default='orders.txt',
+                            help="file to write to (default is orders.txt)")
     write_mode_group = parser.add_mutually_exclusive_group(required=False)
-    write_mode_group.add_argument('-f', '--force', action='store_true', help="overwrite file without asking")
-    write_mode_group.add_argument('-a', '--append', action='store_true', help="append to the file")
+    write_mode_group.add_argument('-f', '--force', action='store_true',
+                                      help="overwrite file without asking")
+    write_mode_group.add_argument('-a', '--append', action='store_true',
+                                      help="append to the file")
     args = parser.parse_args()
     filename = args.output
     if os.path.isfile(filename):
-        if not (args.force or args.append or confirm("File %r exists. OK to overwrite?"%filename)):
+        if not (args.force or args.append
+                or confirm("File %r exists. OK to overwrite?"%filename)):
             return
     elif os.path.exists(filename):
         raise IOError("Path %r is not available."%filename)
