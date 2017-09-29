@@ -6,7 +6,7 @@ and post a "complete work order" message for it.
 If you supply the -s argument, e.g.
   -s http://my_server:3500
 then the url used would be
-  http://my_server:3500/api/v1/work_orders/[N]/complete
+  http://my_server:3500/work-orders/api/v1/work_orders/[N]/complete
 where [N] is the work order id.
 """
 
@@ -128,7 +128,7 @@ def make_url(site, order_id, cancel):
     """Makes the complete/cancel url from the given elements."""
     if not site.endswith('/'):
         site += '/'
-    return '{}api/v1/work_orders/{}/{}'.format(
+    return '{}work-orders/api/v1/work_orders/{}/{}'.format(
         site, order_id, 'cancel' if cancel else 'complete'
     )
 
