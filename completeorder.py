@@ -122,7 +122,13 @@ def send_request(data, url, proxy, cert=None, headers=None):
         session.verify = cert
     r = session.post(url=url, data=data)
     print r.status_code
-    print r.text
+    if 200 <= r.status_code < 300:
+        print r.text
+    elif r.text:
+        error_file = 'error_from_complete.txt'
+        with open(error_file, 'w') as fout:
+            fout.write(r.text)
+        print "[See %s for response text.]"%error_file
 
 def make_url(site, order_id, cancel):
     """Makes the complete/cancel url from the given elements."""
