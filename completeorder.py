@@ -21,8 +21,6 @@ import string
 
 HEADERS = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 
-last_barcode_number = None
-
 def new_barcode(num_digits=5, chars=string.digits+string.uppercase):
     """Generates a random barcode of the form FLIM-#####,
     where the # are alpha-numeric characters.
