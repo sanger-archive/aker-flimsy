@@ -44,7 +44,8 @@ def send_request(data, url, proxy, cert=None, headers=None):
     if cert is not None:
         session.verify = cert
     r = session.post(url=url, data=data)
-    print r.status_code
+    print "Status:", r.status_code
+    print r.json()
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
