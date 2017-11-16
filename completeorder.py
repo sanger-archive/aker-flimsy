@@ -76,6 +76,8 @@ def make_complete(order, cancel=False):
             'donor_id': 'my_donor_id',
             'phenotype': 'my_phenotype',
             'scientific_name': 'Mus musculus',
+            # 'tissue_type': 'Blood',
+            # 'is_tumour': 'normal',
             'available': True
         },
         {
@@ -89,6 +91,8 @@ def make_complete(order, cancel=False):
             'donor_id': 'another_donor_id',
             'phenotype': 'another_phenotype',
             'scientific_name': 'Mus musculus',
+            # 'tissue_type': 'Cells',
+            # 'is_tumour': 'tumour',
             'available': True
         },
     ]
@@ -128,11 +132,15 @@ def send_request(data, url, proxy, cert=None, headers=None):
             fout.write(r.text)
         print "[See %s for response text.]"%error_file
 
-def make_url(site, order_id, cancel):
+def make_url(site, order_id, cancel, local=False):
     """Makes the complete/cancel url from the given elements."""
+    if local and not site:
+        site = 'http://localhost:3500/'
     if not site.endswith('/'):
         site += '/'
-    return '{}work-orders/api/v1/work_orders/{}/{}'.format(
+    if not local:
+        site += 'work-orders/'
+    return '{}api/v1/work_orders/{}/{}'.format(
         site, order_id, 'cancel' if cancel else 'complete'
     )
 
@@ -166,15 +174,19 @@ def main():
                            help="exact url to post message to")
     url_group.add_argument('-s', '--site', help="site to post message to")
 
+    parser.add_argument('--local', help="local mode", action='store_true')
+
     parser.add_argument('--cancel', action='store_true',
                         help="send a cancel instead of a complete")
     
     args = parser.parse_args()
 
     if args.site:
-        url = make_url(args.site, args.order_id, args.cancel)
+        url = make_url(args.site, args.order_id, args.cancel, args.local)
     else:
         url = args.url
+    if args.local and not url:
+        url = make_url(None, args.order_id, args.cancel, args.local)
     cert = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'cert.crt')
     if not os.path.isfile(cert):
         print "[No cert.crt file in folder -- proceeding without verification]"
