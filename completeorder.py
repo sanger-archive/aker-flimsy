@@ -3,11 +3,20 @@
 """Read a received work order from a local file,
 and post a "complete work order" message for it.
 
-If you supply the -s argument, e.g.
-  -s http://my_server:3500
-then the url used would be
-  http://my_server:3500/work-orders/api/v1/work_orders/[N]/complete
-where [N] is the work order id.
+examples:
+
+Using -s instead of -u:
+example: ./completeorder.py -s http://my_server:3500 123
+    url: http://my_server:3500/work-orders/api/v1/work_orders/123/complete
+
+If you supply the --local argument, then the 'work-orders' fragment
+of the path is omitted:
+example: ./completeorder.py --local -s http://my_server:3500 123
+    url: http://my_server:3500/api/v1/work_orders/123/complete
+
+Additionally, you can omit the -s parameter and it will be assumed:
+example: ./completeorder.py --local 123
+    url: http://localhost:3500/api/v1/work_orders/123/complete
 """
 
 import os
@@ -161,7 +170,8 @@ def complete_order(order_id, filename, url, proxy, cert, cancel):
         print "\nUse the --url or --site argument to specify destination"
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__,
+    start, end = __doc__.split("\n\n", 1)
+    parser = argparse.ArgumentParser(description=start, epilog=end,
                                      formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('order_id', metavar='ID', type=int,
                         help='work order ID to respond to')
