@@ -84,9 +84,10 @@ def make_complete(order, cancel=False):
             'gender': 'male',
             'donor_id': 'my_donor_id',
             'phenotype': 'my_phenotype',
-            'scientific_name': 'Mus musculus',
-            # 'tissue_type': 'Blood',
-            # 'is_tumour': 'normal',
+            'scientific_name': 'Homo sapiens',
+            'taxon_id': '9606',
+            'tissue_type': 'Blood',
+            'is_tumour': 'normal',
             'available': True
         },
         {
@@ -99,9 +100,10 @@ def make_complete(order, cancel=False):
             'gender': 'female',
             'donor_id': 'another_donor_id',
             'phenotype': 'another_phenotype',
-            'scientific_name': 'Mus musculus',
-            # 'tissue_type': 'Cells',
-            # 'is_tumour': 'tumour',
+            'scientific_name': 'Homo sapiens',
+            'taxon_id': '9606',
+            'tissue_type': 'Cells',
+            'is_tumour': 'tumour',
             'available': True
         },
     ]
