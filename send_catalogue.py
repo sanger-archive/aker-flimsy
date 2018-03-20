@@ -22,7 +22,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--host', '-H', default='localhost',
                         help="RabbitMQ host address")
-    parser.add_argument('--port', '-p', type=int, default='5672',
+    parser.add_argument('--port', '-p', type=int, default=5672,
                         help="RabbitMQ host port")
     parser.add_argument('--vhost', '-v', default='aker',
                         help="RabbitMQ virtual host name")

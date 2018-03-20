@@ -98,6 +98,7 @@ This script sends the contents of a catalogue file as a message to a RabbitMQ in
 
 Usage:
 
-    send_catalogue.py [-h] [--host HOST] [--port PORT] [--vhost VHOST] [--catalogue CATALOGUE]
+    ./send_catalogue.py   # use all defaults
+    ./send_catalgoue.py --host HOST --port PORT --vhost VHOST --catalogue CATALOGUE
 
-Defaults are set to work with most local RabbitMQ instances, but can be overwritten using the arguments if needed. The file 'catalogue.JSON' included in this directory will be sent by default, but that too can be overwritten.
+Defaults are set to work with most local RabbitMQ instances, but can be overridden using the arguments if needed. The file 'catalogue.JSON' included in this directory will be sent by default, but that too can be overridden.
