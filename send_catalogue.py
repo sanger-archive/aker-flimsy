@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
+"""Sends a JSON catalogue as a message to a RabbitMQ instance."""
+
 import pika
 import argparse
 
-""""Sends a JSON catalogue as a message to a RabbitMQ instance"""
-
 def send_message(args):
     """Configure the connection and send the contents of the catalogue file"""
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host=args.host, port=args.port, virtual_host=args.vhost))
+    params = pika.ConnectionParameters(host=args.host, port=args.port, virtual_host=args.vhost)
+    connection = pika.BlockingConnection(params)
     channel = connection.channel()
 
     with open(args.catalogue) as catalogue:
@@ -18,14 +19,14 @@ def send_message(args):
     connection.close()
 
 def main():
-    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--host', '-H', type=str, default='localhost',
-                        help="RabbitMQ Host Address")
-    parser.add_argument('--port', '-p', type=str, default='5672',
-                        help="RabbitMQ Host Port")
-    parser.add_argument('--vhost', '-vh', type=str, default='aker',
-                        help="RabbitMQ Virtual Host Name")
-    parser.add_argument('--catalogue', '-c', type=str, default='catalogue.JSON',
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--host', '-H', default='localhost',
+                        help="RabbitMQ host address")
+    parser.add_argument('--port', '-p', type=int, default='5672',
+                        help="RabbitMQ host port")
+    parser.add_argument('--vhost', '-v', default='aker',
+                        help="RabbitMQ virtual host name")
+    parser.add_argument('--catalogue', '-c', default='catalogue.JSON',
                         help="File containing catalogue JSON")
     args = parser.parse_args()
 
