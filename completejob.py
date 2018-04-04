@@ -156,7 +156,7 @@ def make_url(site, order_id, cancel, local=False):
     )
 
 def complete_job(job_id, filename, url, proxy, cert, cancel):
-    """Reads the order from a file; constructs a "complete job" message;
+    """Reads the job from a file; constructs a "complete job" message;
     and sends that to the given url (if a url is given).
     """
     job_json = read_job(job_id, filename)
