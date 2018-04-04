@@ -11,28 +11,28 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 class Handler(BaseHTTPRequestHandler):
     """Handler for incoming requests.
     The class variable output_file lets you record the
-    received orders to a local file."""
+    received jobs to a local file."""
     output_file = None
     def do_POST(self):
         data = self.post_data()
         try:
-            order_id = data['work_order']['work_order_id']
+            job_id = data['job']['job_id']
         except KeyError:
-            print "[This does not match my expectations of a work order.]"
-            order_id = ''
+            print "[This does not match my expectations of a job.]"
+            job_id = ''
         data = json.dumps(data, indent=4)
         print "\n"
         print data
         if self.output_file:
-            self.write_to_file(order_id, data)
+            self.write_to_file(job_id, data)
         self.send_response(200)
     def post_data(self):
         n = int(self.headers.getheader('content-length', 0))
         return json.loads(self.rfile.read(n))
-    def write_to_file(self, order_id, data):
+    def write_to_file(self, job_id, data):
         print "[Writing to %r]"%self.output_file
         with open(self.output_file, 'a') as fout:
-            fout.write("===ORDER %s===\n"%order_id)
+            fout.write("===JOB %s===\n"%job_id)
             fout.write(data)
             fout.write('\n\n')
 
@@ -52,8 +52,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-p', '--port', default=3400, type=int,
                             help="port to listen on (default is 3400)")
-    parser.add_argument('-o', '--output', metavar='PATH', default='orders.txt',
-                            help="file to write to (default is orders.txt)")
+    parser.add_argument('-o', '--output', metavar='PATH', default='jobs.txt',
+                            help="file to write to (default is jobs.txt)")
     write_mode_group = parser.add_mutually_exclusive_group(required=False)
     write_mode_group.add_argument('-f', '--force', action='store_true',
                                       help="overwrite file without asking")
