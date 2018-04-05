@@ -143,8 +143,12 @@ def send_request(data, url, proxy, cert=None, headers=None):
             fout.write(r.text)
         print "[See %s for response text.]"%error_file
 
-def make_url(site, order_id, cancel, local=False):
+def make_url(site, order_id, action, local=False):
     """Makes the complete/cancel url from the given elements."""
+    if not action:
+        action = 'complete'
+    elif action==True:
+        action = 'cancel'
     if local and not site:
         site = 'http://localhost:3500/'
     if not site.endswith('/'):
@@ -152,7 +156,7 @@ def make_url(site, order_id, cancel, local=False):
     if not local:
         site += 'work-orders/'
     return '{}api/v1/jobs/{}/{}'.format(
-        site, order_id, 'cancel' if cancel else 'complete'
+        site, order_id, action
     )
 
 def complete_job(job_id, filename, url, proxy, cert, cancel):
