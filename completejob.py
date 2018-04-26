@@ -133,7 +133,7 @@ def send_request(data, url, proxy, cert=None, headers=None):
     session.headers = HEADERS if headers is None else headers
     if cert is not None:
         session.verify = cert
-    r = session.post(url=url, data=data)
+    r = session.put(url=url, data=data)
     print r.status_code
     if 200 <= r.status_code < 300:
         print r.text
