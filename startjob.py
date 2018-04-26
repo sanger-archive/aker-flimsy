@@ -40,7 +40,7 @@ def main():
     parser.add_argument('--local', help="local mode", action='store_true')
     args = parser.parse_args()
     if args.site:
-        url = make_url(args.site, args.job_id, args.cancel, args.local)
+        url = make_url(args.site, args.job_id, 'start', args.local)
     else:
         url = args.url
     if args.local and not url:
