@@ -62,58 +62,21 @@ def read_job(job_id, file):
 
 def make_complete(job, cancel=False):
     """Starting from the given job (dict), creates a "complete job" message
-    (another dict), containing updated material, new materials, and a new container."""
+    (another dict), containing updated material."""
     job = job['job']
     materials = job['materials']
     updated_materials = []
     parent_ids = []
     if materials:
         m = materials[0]
-        g = 'male' if m.get('gender')=='female' else 'female'
-        updated_materials.append({'_id': m['_id'], 'gender': g})
+        c = 0.123
+        v = 1.123
+        updated_materials.append({'_id': m['_id'], 'volume': v, 'concentration': c})
         parent_ids = [m['_id'] for m in materials]
+
     barcode = new_barcode()
-    new_materials = [
-        {
-            'container': {
-                'barcode': barcode,
-                'address': 'A:1',
-            },
-            'parents': parent_ids,
-            'supplier_name': 'test1',
-            'gender': 'male',
-            'donor_id': 'my_donor_id',
-            'phenotype': 'my_phenotype',
-            'scientific_name': 'Homo sapiens',
-            'taxon_id': '9606',
-            'tissue_type': 'Blood',
-            'is_tumour': 'normal',
-            'available': True
-        },
-        {
-            'container': {
-                'barcode': barcode,
-                'address': 'A:2',
-            },
-            'parents': parent_ids,
-            'supplier_name': 'test2',
-            'gender': 'female',
-            'donor_id': 'another_donor_id',
-            'phenotype': 'another_phenotype',
-            'scientific_name': 'Homo sapiens',
-            'taxon_id': '9606',
-            'tissue_type': 'Cells',
-            'is_tumour': 'tumour',
-            'available': True
-        },
-    ]
-    containers = [
-        {
-          'barcode': barcode,
-          'row_is_alpha': True, 'col_is_alpha': False,
-          'num_of_rows': 4, 'num_of_cols': 6,
-        }
-    ]
+    new_materials = []
+    containers = []
     comment = 'We %s your job for you.'%('cancelled' if cancel else 'completed')
     result = {
         'job_id': job['job_id'],
@@ -194,7 +157,7 @@ def main():
 
     parser.add_argument('--cancel', action='store_true',
                         help="send a cancel instead of a complete")
-    
+
     args = parser.parse_args()
 
     if args.site:
@@ -208,6 +171,6 @@ def main():
         print "[No cert.crt file in folder -- proceeding without verification]"
         cert = False
     complete_job(args.job_id, args.file, url, args.proxy, cert, args.cancel)
-    
+
 if __name__ == '__main__':
     main()
