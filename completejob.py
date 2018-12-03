@@ -63,7 +63,6 @@ def read_job(job_id, file):
 def make_complete(job, cancel=False):
     """Starting from the given job (dict), creates a "complete job" message
     (another dict), containing updated material."""
-    job = job['job']
     materials = job['materials']
     updated_materials = []
     parent_ids = []

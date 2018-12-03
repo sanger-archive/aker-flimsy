@@ -16,7 +16,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         data = self.post_data()
         try:
-            job_id = data['job']['job_id']
+            data = data['data'][0]['attributes']
+            job_id = data['job_id']
         except KeyError:
             print "[This does not match my expectations of a job.]"
             job_id = ''
